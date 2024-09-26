@@ -1,7 +1,5 @@
-## Course Title:
-### Programming For AI
+## Programming For AI
 #### Instructor: Miss Mehak Mahzar
-
 
 ## Group Memebers 
 #### 23K-0030 Abser Mansoor
