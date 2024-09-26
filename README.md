@@ -1,6 +1,6 @@
 ## Course Title:
 ### Programming For AI
-### Instructor: Miss Mehak Mahzar
+#### Instructor: Miss Mehak Mahzar
 
 
 ## Group Memebers 
