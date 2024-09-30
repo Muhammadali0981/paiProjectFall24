@@ -5,4 +5,4 @@
 #### 23K-0030 Abser Mansoor
 #### 23K-0032 Saif Ur Rehaman
 #### 23K-0052 Muhammad Ali
-![image](https://github.com/user-attachments/assets/91c9b54b-3bd2-4c0a-9540-6190700c7530)
+![image](https://github.com/user-attachments/assets/c1785971-10ae-49c7-aad6-941f4470b150)
