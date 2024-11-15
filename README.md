@@ -13,7 +13,7 @@
 - Seaborn and Matplot
   
 ## Things Todo
--Select any dataset in CSV or Excel format from the provided link, and update the file by
+- Select any dataset in CSV or Excel format from the provided link, and update the file by
 specifying the data you are working on along your group members with the names of
 - Clean and prepare this data using pandas. (Fill in missing values. Do not allow invalid values
 in any column. Convert strings to numeric data etc. etc. If data is already cleaned then you may
