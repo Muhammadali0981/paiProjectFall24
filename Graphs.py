@@ -39,13 +39,14 @@ sns.boxplot(data = df, x="Y1",legend=True)
 
 plt.subplot(5, 2, 10)
 sns.boxplot(data = df, x="Y2",legend=True)
+plt.legend()
+plt.subplots_adjust(hspace=0.5, wspace=0.5)
 plt.show()
 
 col = df.columns
 for c in col:
     sns.displot(df[c], kde = True, color = 'purple')
     plt.show()
-
 
 plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr() ,annot = True, annot_kws= {"size": 8})
@@ -85,5 +86,5 @@ plt.subplot(3, 2, 6)
 sns.set_theme(style='darkgrid')
 sns.regplot(x=df["Y2"], y=df["X5"], line_kws= {'color':'red'},scatter_kws ={'color':'darkblue', 'alpha':0.2, 'edgecolor':'black'})
 
+plt.subplots_adjust(hspace=0.5, wspace=0.5)
 plt.show()
-
