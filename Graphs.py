@@ -7,6 +7,12 @@ import matplotlib.pyplot as plt
 # Outliers using box and whisker
 df = pd.read_csv("ENB2012_data.csv")
 
+col = df.columns
+for c in col :
+    df[c] = pd.to_numeric(df[c],errors='coerce')
+    
+df.fillna(-1)
+df_cleaned = df.replace(-1, np.nan)
 
 plt.figure(figsize=(16,12))
 
@@ -39,7 +45,6 @@ sns.boxplot(data = df, x="Y1",legend=True)
 
 plt.subplot(5, 2, 10)
 sns.boxplot(data = df, x="Y2",legend=True)
-plt.legend()
 plt.subplots_adjust(hspace=0.5, wspace=0.5)
 plt.show()
 
@@ -52,8 +57,6 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr() ,annot = True, annot_kws= {"size": 8})
 sns.set_palette('pastel')
 plt.show()
-
-
 
 plt.figure(figsize=(16,12))
 
