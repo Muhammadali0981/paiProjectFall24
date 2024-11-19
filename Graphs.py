@@ -12,7 +12,7 @@ for c in col :
     df[c] = pd.to_numeric(df[c],errors='coerce')
     
 df.fillna(-1)
-df_cleaned = df.replace(-1, np.nan)
+df = df.replace(-1, np.nan)
 
 plt.figure(figsize=(16,12))
 
@@ -45,7 +45,7 @@ sns.boxplot(data = df, x="Y1",legend=True)
 
 plt.subplot(5, 2, 10)
 sns.boxplot(data = df, x="Y2",legend=True)
-plt.subplots_adjust(hspace=0.5, wspace=0.5)
+plt.subplots_adjust(hspace=1, wspace=1)
 plt.show()
 
 col = df.columns
