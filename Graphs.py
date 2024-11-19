@@ -11,8 +11,9 @@ col = df.columns
 for c in col :
     df[c] = pd.to_numeric(df[c],errors='coerce')
     
-df.fillna(-1)
+df.fillna(-1, inplace=True)
 df = df.replace(-1, np.nan)
+
 
 plt.figure(figsize=(16,12))
 
