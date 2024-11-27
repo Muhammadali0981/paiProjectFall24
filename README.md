@@ -23,4 +23,4 @@ introduce some missing values, invalid values yourself and then clean them)
 correlation etc etc. Visualize these statistics and different features of this dataset through graphs
 using MatplotLib and Seaborn library (we will study in next lab)
 - ✔️ Apply any machine learning algorithm using sklearn library (we will study in next lab)
-- [] Create UI either (Desktop App using Tkinter, or WebApp using Flask or Django)
+- ✔️ Create UI either (Desktop App using Tkinter, or WebApp using Flask or Django)
