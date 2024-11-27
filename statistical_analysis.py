@@ -1,60 +1,63 @@
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt  # Import the matplotlib library for creating visualizations
+import numpy as np  # Import numpy for numerical operations like creating arrays
 
+# Define unique X-axis labels for each of the three subplots
+x_labels = [
+    ['x1', 'x2', 'x3'],  # X-axis labels for the first subplot
+    ['x3', 'x4', 'x8'],  # X-axis labels for the second subplot
+    ['y1', 'y2', 'y3']   # X-axis labels for the third subplot
+]
 
-df = pd.read_csv("ENB2012_data.csv")
+# Define the data for three groups (one for each subplot)
+data_groups = [
+    {
+        'Std Deviation': [5, 10, 15],  # Standard deviation values for each category
+        'Mean': [20, 30, 40],          # Mean values for each category
+        'Median': [25, 35, 45],         # Median values for each category
+        'Mode': [25, 35, 45],
+        'Var': [25, 35, 45]
+    },
+    {
+        'Std Deviation': [7, 12, 18],  # Second group's standard deviation values
+        'Mean': [25, 35, 50],          # Second group's mean values
+        'Median': [28, 40, 55],         # Second group's median values
+        'Mode': [25, 35, 45],
+        'Var': [25, 35, 45]
+    },
+    {
+        'Std Deviation': [4, 8, 13],   # Third group's standard deviation values
+        'Mean': [18, 28, 38],          # Third group's mean values
+        'Median': [22, 32, 42],         # Third group's median values
+        'Mode': [25, 35, 45],
+        'Var': [25, 35, 45]
+    }
+]
 
-col = df.columns
-for c in col :
-    df[c] = pd.to_numeric(df[c],errors='coerce')
+# Set up a figure with 3 vertical subplots (stacked on top of each other)
+fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharex=False)  # figsize specifies the overall size, sharex=False ensures independent x-axes
+
+# Set bar width for grouped bars
+width = 0.15  # Width of each bar in the grouped bar plot
+
+# Loop through each group of data and labels to create subplots
+for i, (group_data, labels) in enumerate(zip(data_groups, x_labels)):
+    ax = axs[i]  # Access the current subplot (ax is the axis object for subplot i)
+    x = np.arange(len(labels))  # Create an array of positions for bars (e.g., [0, 1, 2] for 3 categories)
     
-df.fillna(-1, inplace=True)
-df = df.replace(-1, np.nan)
+    # Plot each statistic as bars, slightly shifted to group them
+    ax.bar(x - 2*width, group_data['Std Deviation'], width, label='Std Deviation', color='skyblue')  # Bar for standard deviation
+    ax.bar(x - width, group_data['Mean'], width, label='Mean', color='orange')  # Bar for mean
+    ax.bar(x, group_data['Median'], width, label='Median', color='green')  # Bar for median
+    ax.bar(x + width, group_data['Mode'], width, label='Mode', color='black')
+    ax.bar(x + 2*width, group_data['Var'], width, label='Var', color='red')
+    # Add title and labels to the subplot
+# Title for the current group
+    ax.set_ylabel("Value")  # Y-axis label for the current group
+    ax.set_xticks(x)  # Set the x-axis tick positions
+    ax.set_xticklabels(labels)  # Set the unique labels for each category on the x-axis
+    ax.legend(title="Statistic")  # Add a legend to identify bar colors
 
-colors_3 = ['#e74c3c', '#2980b9', '#27ae60']
-colors_4 = ['#e74c3c', '#2980b9', '#27ae60', '#dc7633']
-
-mean = df.mean()
-plt.subplot(1, 3, 1)
-plt.xlabel('data')
-plt.ylabel('mean')
-plt.bar(('X1', 'X7', 'X8'), (df['X1'].mean(), df['X7'].mean(), df['X8'].mean()), color = colors_3)
-
-
-plt.subplot(1, 3, 2)
-plt.xlabel('data')
-plt.ylabel('mean')
-plt.bar(('X2', 'X3', 'X4'), (df['X2'].mean(), df['X3'].mean(), df['X4'].mean()), color = colors_3)
-
-
-plt.subplot(1, 3, 3)
-plt.xlabel('data')
-plt.ylabel('mean')
-plt.bar(('X5', 'X6', 'Y1', 'Y2'), (df['X5'].mean(), df['X6'].mean(), df['Y1'].mean(), df['Y2'].mean()), color = colors_4)
-plt.subplots_adjust(wspace=0.5)
-
-plt.show()
-
-
-
-std = df.std()
-plt.subplot(1, 3, 1)
-plt.xlabel('data')
-plt.ylabel('std')
-plt.bar(('X1', 'X7', 'X8'), (df['X1'].std(), df['X7'].std(), df['X8'].std()), color = colors_3)
-
-
-plt.subplot(1, 3, 2)
-plt.xlabel('data')
-plt.ylabel('std')
-plt.bar(('X2', 'X3', 'X4'), (df['X2'].std(), df['X3'].std(), df['X4'].std()), color = colors_3)
-
-
-plt.subplot(1, 3, 3)
-plt.xlabel('data')
-plt.ylabel('std')
-plt.bar(('X5', 'X6', 'Y1', 'Y2'), (df['X5'].std(), df['X6'].std(), df['Y1'].std(), df['Y2'].std()), color = colors_4)
-plt.subplots_adjust(wspace=0.5)
-plt.show()
+# Add a shared x-axis label for all subplots
+plt.xlabel("Categories")  # Common x-axis label for the entire figure
+plt.tight_layout()  # Adjust subplot spacing to prevent overlap
+plt.show()  # Display the final plot
