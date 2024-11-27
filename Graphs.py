@@ -61,6 +61,7 @@ plt.show()
 
 plt.figure(figsize=(16,12))
 
+sns.set_theme(style='darkgrid')
 plt.subplot(3, 2, 1)
 sns.set_theme(style='darkgrid')
 sns.regplot(x=df["X1"], y=df["X2"], line_kws= {'color':'red'},scatter_kws ={'color':'darkblue', 'alpha':0.2, 'edgecolor':'black'})
