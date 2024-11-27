@@ -11,6 +11,7 @@
 - Pandas
 - Numpy
 - Seaborn and Matplot
+- HTML
   
 ## Things Todo
 - ✔️ Select any dataset in CSV or Excel format from the provided link, and update the file by
