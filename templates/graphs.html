@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graphs Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .graph-item {
+            text-align: center;
+            max-width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization Graphs</h1>
+
+    <div class="graph-container">
+        <div class="graph-item">
+            <h2>Box Plot</h2>
+            <img src="{{ box_plot }}" alt="Box Plot">
+        </div>
+
+        <div class="graph-item">
+            <h2>Correlation Heatmap</h2>
+            <img src="{{ correlation_plot }}" alt="Correlation Plot">
+        </div>
+
+        <div class="graph-item">
+            <h2>Regression Plot</h2>
+            <img src="{{ regression_plot }}" alt="Regression Plot">
+        </div>
+    </div>
+
+    <h2>Distribution Plots</h2>
+    <div class="graph-container">
+        {% for plot in distribution_plots %}
+        <div class="graph-item">
+            <img src="{{ plot }}" alt="Distribution Plot">
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="/" class="back-link">Back to Dashboard</a>
+</body>
+</html>
