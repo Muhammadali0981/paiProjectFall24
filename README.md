@@ -26,7 +26,6 @@
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Muhammadali0981/paiProjectFall24
-cd energy-efficiency-analysis
 ```
 
 ### 2. Create Virtual Environment
