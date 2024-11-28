@@ -2,18 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Analysis Dashboard</title>
+    <title>PAI Project</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 200px;
             line-height: 1.6;
         }
         h1 {
             text-align: center;
-            color: #333;
+            justify-content: center;
+            color: #000000;
+        }
+        h3 {
+            text-align: center;
+            font-weight: normal;
+            justify-content: center;
+            text-decoration: underline;
+            color: #777fec;
+        }
+        h3 a {
+            text-decoration: none; 
+            color: inherit;       
+        }
+        h3 a:hover {
+            text-decoration: underline;
         }
         nav {
             display: flex;
@@ -21,24 +36,28 @@
             gap: 20px;
             margin-top: 20px;
         }
-        a {
+        nav a {
             text-decoration: none;
             padding: 10px 15px;
             background-color: #f4f4f4;
-            color: #333;
+            color: #000000;
             border-radius: 5px;
         }
-        a:hover {
+        nav a:hover {
             background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <h1>Data Analysis Dashboard</h1>
+    <h1>PAI Project</h1>
+    <h3>
+        <a href="https://www.kaggle.com/datasets/elikplim/eergy-efficiency-dataset" target="_blank">Link to the dataset</a>
+    </h3>
     <nav>
         <a href="/graphs">View Graphs</a>
         <a href="/regression">Regression Analysis</a>
         <a href="/statistics">Statistical Analysis</a>
+    
     </nav>
 </body>
 </html>
