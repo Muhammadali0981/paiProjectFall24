@@ -25,7 +25,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone [text](https://github.com/Muhammadali0981/paiProjectFall24)
+git clone https://github.com/Muhammadali0981/paiProjectFall24
 cd energy-efficiency-analysis
 ```
 
@@ -56,7 +56,7 @@ python app.py
 
 ## Project Structure
 ```
-energy-efficiency-analysis/
+paiProjectFall24/
 │
 ├── app.py                  # Main Flask application
 │
